@@ -5,6 +5,59 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Publications — Joy Ekka</title>
   <link rel="stylesheet" href="assets/style.css">
+  <style>
+    /* ---- richer publication cards (scoped to this page) ---- */
+    .pub-card {
+      display: grid;
+      grid-template-columns: 150px 1fr;
+      gap: 22px;
+      align-items: start;
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 20px 22px;
+      margin-top: 18px;
+      box-shadow: 0 1px 2px rgba(20,32,43,.03), 0 8px 24px -16px rgba(20,32,43,.18);
+      transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+    }
+    .pub-card:hover {
+      transform: translateY(-3px);
+      border-color: var(--accent);
+      box-shadow: 0 2px 4px rgba(20,32,43,.04), 0 16px 36px -18px rgba(20,32,43,.28);
+    }
+    .pub-thumb {
+      width: 150px; height: 110px; object-fit: cover;
+      border-radius: 10px; border: 1px solid var(--line);
+      background: var(--paper);
+    }
+    .pub-thumb.placeholder {
+      display: flex; align-items: center; justify-content: center;
+      color: var(--ink-soft); font-family: "Fraunces", Georgia, serif;
+      font-size: .72rem; text-transform: uppercase; letter-spacing: .1em; text-align: center;
+    }
+    .pub-body .venue-tag {
+      display: inline-block; font-family: "Fraunces", Georgia, serif;
+      font-size: .68rem; text-transform: uppercase; letter-spacing: .12em;
+      color: var(--accent-2); border: 1px solid var(--line);
+      border-radius: 6px; padding: 2px 8px; margin-bottom: 8px;
+    }
+    .pub-body .ptitle { font-family: "Fraunces", Georgia, serif; font-weight: 600; font-size: 1.08rem; line-height: 1.3; }
+    .pub-body .pauthors { color: var(--ink-soft); font-size: .92rem; margin-top: 5px; }
+    .pub-body .pauthors b.me { color: var(--ink); }
+    .pub-body .pvenue { font-style: italic; color: var(--ink-soft); font-size: .9rem; margin-top: 3px; }
+    .pub-links { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin-top: 12px; }
+    .pub-links a {
+      font-family: "Fraunces", Georgia, serif; font-size: .8rem;
+      text-decoration: none; color: var(--accent);
+      border: 1px solid var(--line); border-radius: 999px;
+      padding: 4px 12px; transition: border-color .15s, color .15s;
+    }
+    .pub-links a:hover { border-color: var(--accent); color: var(--accent-2); }
+    @media (max-width: 600px) {
+      .pub-card { grid-template-columns: 1fr; }
+      .pub-thumb, .pub-thumb.placeholder { width: 100%; height: 150px; }
+    }
+  </style>
 </head>
 <body>
   <header class="site">
@@ -23,31 +76,34 @@
     <section class="hero">
       <p class="eyebrow">Publications</p>
       <h1>Publications</h1>
-      <p class="tagline">Peer-reviewed work. See also my <a href="https://orcid.org/0000-0002-1903-6658">ORCID</a> and <a href="https://scholar.google.com/citations?user=YOUR_SCHOLAR_ID">Google Scholar</a>.</p>
     </section>
 
     <section>
-      <div class="pub">
-        <p class="title">Unveiling the role of 2D monolayer Mn-doped MoS<sub>2</sub> material: toward an efficient electrocatalyst for H<sub>2</sub> evolution reaction</p>
-        <p><a href="https://doi.org/10.1039/D1CP04344G" target="_blank" rel="noopener">DOI</a></p>
+      <!-- ============ PUBLISHED ============ -->
+
+      <div class="pub-card">
+        <img class="pub-thumb" src="assets/img/pubs/mn-mos2.png" alt="Mn-doped MoS2 graphical abstract"
+             onerror="this.outerHTML='&lt;div class=&quot;pub-thumb placeholder&quot;&gt;TOC figure&lt;/div&gt;'">
+        <div class="pub-body">
+          <span class="venue-tag">RSC &middot; PCCP</span>
+          <div class="ptitle">Unveiling the role of 2D monolayer Mn-doped MoS<sub>2</sub> material: toward an efficient electrocatalyst for H<sub>2</sub> evolution reaction</div>
+          <div class="pauthors"><b class="me">J. Ekka</b>, S. N. Upadhyay, F. J. Keil, S. Pakhira</div>
+          <div class="pvenue">Physical Chemistry Chemical Physics, 2022, 24, 265&ndash;280</div>
+          <div class="pub-links">
+            <a href="https://doi.org/10.1039/d1cp04344g" target="_blank" rel="noopener">DOI</a>
+            <a href="https://scholar.google.com/citations?user=kp460BwAAAAJ&hl=en" target="_blank" rel="noopener">Google Scholar</a>
+          </div>
+        </div>
       </div>
-
-      <!-- Add new papers by copying a block like the one above.
-           PhD papers in preparation:
-             • DUT-4(Al) & DUT-5(Al)/PVDF composites for toluene capture (in prep)
-             • PoreGraphNet: GNN for MOF/polymer composite properties (in prep)
-      -->
     </section>
-
-    
   </main>
 
   <footer class="site">
     <div class="wrap">
-      <span>© 2026 Joy Ekka</span>
+      <span>&copy; 2026 Joy Ekka</span>
       <span>
-        <a href="https://github.com/joy-ekka">GitHub</a> ·
-        <a href="https://www.linkedin.com/in/joy-ekka-121bba211">LinkedIn</a> ·
+        <a href="https://github.com/joy-ekka">GitHub</a> &middot;
+        <a href="https://www.linkedin.com/in/joy-ekka-121bba211">LinkedIn</a> &middot;
         <a href="https://orcid.org/0000-0002-1903-6658">ORCID</a>
       </span>
     </div>
