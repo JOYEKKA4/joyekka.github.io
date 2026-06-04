@@ -6,6 +6,59 @@
   <title>Joy Ekka — Computational Materials Scientist</title>
   <meta name="description" content="Joy Ekka — PhD candidate in computational materials science. Multi-scale modelling of MOF/polymer composites for VOC capture.">
   <link rel="stylesheet" href="assets/style.css">
+  <style>
+    /* ---- network hero ---- */
+    #hero-net {
+      position: relative;
+      border-radius: 16px;
+      overflow: hidden;
+      margin-top: 8px;
+      background: radial-gradient(130% 130% at 75% 0%, #eef3f1 0%, var(--card) 60%);
+      border: 1px solid var(--line);
+      box-shadow: 0 1px 2px rgba(20,32,43,.03), 0 8px 24px -16px rgba(20,32,43,.18);
+    }
+    #hero-canvas {
+      position: absolute; inset: 0; width: 100%; height: 100%;
+      display: block; z-index: 0;
+    }
+    .hero-inner {
+      position: relative; z-index: 1;
+      display: flex; align-items: center; gap: 30px;
+      padding: 36px 34px;
+      flex-wrap: wrap;
+    }
+    .hero-photo {
+      width: 150px; height: 150px; object-fit: cover;
+      border: 1px solid var(--line);
+      box-shadow: 0 8px 24px -12px rgba(20,32,43,.35);
+      flex-shrink: 0; background: var(--paper);
+    }
+    .hero-photo.placeholder {
+      display: flex; align-items: center; justify-content: center;
+      color: var(--ink-soft); font-family: "Fraunces", Georgia, serif;
+      font-size: .7rem; text-transform: uppercase; letter-spacing: .1em; text-align: center;
+    }
+    .hero-text { flex: 1; min-width: 240px; }
+    .hero-text h1 { margin: 4px 0; }
+    /* ---- social icon links ---- */
+    .sociallinks { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 18px; }
+    .sociallinks a {
+      display: inline-flex; align-items: center; justify-content: center;
+      width: 40px; height: 40px; border-radius: 10px;
+      border: 1px solid var(--line); background: var(--card);
+      color: var(--ink-soft); text-decoration: none;
+      transition: transform .15s ease, border-color .15s ease, color .15s ease, box-shadow .15s ease;
+    }
+    .sociallinks a:hover {
+      transform: translateY(-2px);
+      border-color: var(--accent); color: var(--accent);
+      box-shadow: 0 6px 16px -10px rgba(20,32,43,.4);
+    }
+    .sociallinks svg { width: 20px; height: 20px; fill: currentColor; }
+    @media (max-width: 560px) {
+      .hero-inner { padding: 26px 22px; }
+    }
+  </style>
 </head>
 <body>
   <header class="site">
@@ -19,23 +72,41 @@
       </ul>
     </nav>
   </header>
-
   <main class="wrap">
     <section class="hero">
-      <p class="eyebrow">Computational Materials Science</p>
-      <h1>Joy Ekka</h1>
-      <p class="tagline">.</p>
-      <p class="meta">PhD candidate at Université de Montpellier (Institut Charles Gerhardt Montpellier (ICGM), CNRS), co-funded by CNES. Defending in December 2026.</p>
-      <div class="links">
-        <a href="https://github.com/joy-ekka" target="_blank" rel="noopener">GitHub</a>
-        <a href="https://www.linkedin.com/in/joy-ekka-121bba211" target="_blank" rel="noopener">LinkedIn</a>
-        <a href="https://orcid.org/0000-0002-1903-6658" target="_blank" rel="noopener">ORCID</a>
-        <a href="https://scholar.google.com/citations?user=YOUR_SCHOLAR_ID" target="_blank" rel="noopener">Google Scholar</a>
-        <a href="assets/pdf/joy-ekka-cv.pdf" target="_blank" rel="noopener">CV (PDF)</a>
-        <a href="mailto:joy.ekka@example.com">Email</a>
+      <div id="hero-net">
+        <canvas id="hero-canvas"></canvas>
+        <div class="hero-inner">
+          <img class="hero-photo" src="assets/img/profile.jpg" alt="Joy Ekka"
+               onerror="this.outerHTML='&lt;div class=&quot;hero-photo placeholder&quot;&gt;your photo&lt;/div&gt;'">
+          <div class="hero-text">
+            <p class="eyebrow">Computational Materials Science</p>
+            <h1>Joy Ekka</h1>
+            <p class="meta">PhD candidate at Université de Montpellier (Institut Charles Gerhardt Montpellier (ICGM), CNRS), co-funded by CNES. Defending in December 2026.</p>
+            <div class="sociallinks">
+              <a href="https://github.com/joy-ekka" target="_blank" rel="noopener" aria-label="GitHub" title="GitHub">
+                <svg viewBox="0 0 24 24"><path d="M12 .5C5.73.5.5 5.73.5 12c0 5.08 3.29 9.39 7.86 10.91.58.11.79-.25.79-.56v-2c-3.2.7-3.88-1.54-3.88-1.54-.53-1.34-1.29-1.7-1.29-1.7-1.05-.72.08-.71.08-.71 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.55-.29-5.24-1.28-5.24-5.69 0-1.26.45-2.29 1.19-3.1-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.18 1.18a11 11 0 0 1 5.8 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.84 1.19 3.1 0 4.42-2.69 5.39-5.25 5.68.41.36.78 1.07.78 2.16v3.2c0 .31.21.68.8.56A11.51 11.51 0 0 0 23.5 12C23.5 5.73 18.27.5 12 .5z"/></svg>
+              </a>
+              <a href="https://www.linkedin.com/in/joy-ekka-121bba211" target="_blank" rel="noopener" aria-label="LinkedIn" title="LinkedIn">
+                <svg viewBox="0 0 24 24"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.13 1.45-2.13 2.94v5.67H9.35V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.07 2.07 0 1 1 0-4.14 2.07 2.07 0 0 1 0 4.14zM7.12 20.45H3.55V9h3.57v11.45zM22.22 0H1.77C.8 0 0 .78 0 1.74v20.52C0 23.22.8 24 1.77 24h20.45c.98 0 1.78-.78 1.78-1.74V1.74C24 .78 23.2 0 22.22 0z"/></svg>
+              </a>
+              <a href="https://orcid.org/0000-0002-1903-6658" target="_blank" rel="noopener" aria-label="ORCID" title="ORCID">
+                <svg viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12s5.37 12 12 12 12-5.37 12-12S18.63 0 12 0zM7.37 18.16h-1.9V7.65h1.9v10.51zM6.42 6.37a1.1 1.1 0 1 1 0-2.2 1.1 1.1 0 0 1 0 2.2zm12.16 11.79h-3.27c-3.2 0-4.62-2.3-4.62-5.26 0-3.21 2.05-5.26 5.31-5.26h2.58v1.71h-2.45c-2.34 0-3.06 1.45-3.06 3.55 0 2.28 1.22 3.54 3.16 3.54h1.27v-3.84h1.9v5.81z"/></svg>
+              </a>
+              <a href="https://scholar.google.com/citations?user=kp460BwAAAAJ&hl=en" target="_blank" rel="noopener" aria-label="Google Scholar" title="Google Scholar">
+                <svg viewBox="0 0 24 24"><path d="M12 24a7 7 0 1 1 0-14 7 7 0 0 1 0 14zm0-24L0 9.5l4.84 3.77A8 8 0 0 1 12 8a8 8 0 0 1 7.16 5.27L24 9.5z"/></svg>
+              </a>
+              <a href="assets/pdf/joy-ekka-cv.pdf" target="_blank" rel="noopener" aria-label="CV (PDF)" title="CV (PDF)">
+                <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6zm-1 1.5L18.5 9H14a1 1 0 0 1-1-1V3.5zM8 13h8v1.5H8V13zm0 3.5h8V18H8v-1.5zM8 9.5h4V11H8V9.5z"/></svg>
+              </a>
+              <a href="mailto:joy.ekka@example.com" aria-label="Email" title="Email">
+                <svg viewBox="0 0 24 24"><path d="M22 4H2a1 1 0 0 0-1 1v14a1 1 0 0 0 1 1h20a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1zm-1.6 2L12 12.27 3.6 6h16.8zM3 18V7.24l8.4 6.27a1 1 0 0 0 1.2 0L21 7.24V18H3z"/></svg>
+              </a>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
-
     <section>
       <h2>About</h2>
       <p class="lead"></p>
@@ -43,18 +114,83 @@
       <p>Before my PhD I trained as a physicist (MSc), applying DFT to 2D transition-metal dichalcogenides, perovskites, and spinels. </p>
     </section>
 
-    
   </main>
-
   <footer class="site">
     <div class="wrap">
-      <span>© 2026 Joy Ekka</span>
+      <span>&copy; 2026 Joy Ekka</span>
       <span>
-        <a href="https://github.com/joy-ekka">GitHub</a> ·
-        <a href="https://www.linkedin.com/in/joy-ekka-121bba211">LinkedIn</a> ·
+        <a href="https://github.com/joy-ekka">GitHub</a> &middot;
+        <a href="https://www.linkedin.com/in/joy-ekka-121bba211">LinkedIn</a> &middot;
         <a href="https://orcid.org/0000-0002-1903-6658">ORCID</a>
       </span>
     </div>
   </footer>
+
+  <script>
+  (function () {
+    var canvas = document.getElementById('hero-canvas');
+    if (!canvas) return;
+    var ctx = canvas.getContext('2d');
+    var stage = document.getElementById('hero-net');
+    var W, H, dpr, dots = [];
+    var ACCENT = '31,111,107';   // teal rgb
+    var LINK = 120;              // max distance to draw a line
+
+    function resize() {
+      dpr = window.devicePixelRatio || 1;
+      W = stage.clientWidth; H = stage.clientHeight;
+      canvas.width = W * dpr; canvas.height = H * dpr;
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+      build();
+    }
+    function build() {
+      var n = Math.max(18, Math.min(55, Math.round(W * H / 12000)));
+      dots = [];
+      for (var i = 0; i < n; i++) {
+        dots.push({
+          x: Math.random() * W, y: Math.random() * H,
+          vx: (Math.random() - 0.5) * 0.4,
+          vy: (Math.random() - 0.5) * 0.4,
+          r: 1.5 + Math.random() * 1.8
+        });
+      }
+    }
+    function step() {
+      ctx.clearRect(0, 0, W, H);
+      for (var i = 0; i < dots.length; i++) {
+        var d = dots[i];
+        d.x += d.vx; d.y += d.vy;
+        if (d.x < 0 || d.x > W) d.vx *= -1;
+        if (d.y < 0 || d.y > H) d.vy *= -1;
+      }
+      // lines
+      for (var a = 0; a < dots.length; a++) {
+        for (var b = a + 1; b < dots.length; b++) {
+          var dx = dots[a].x - dots[b].x, dy = dots[a].y - dots[b].y;
+          var dist = Math.sqrt(dx * dx + dy * dy);
+          if (dist < LINK) {
+            ctx.strokeStyle = 'rgba(' + ACCENT + ',' + (0.18 * (1 - dist / LINK)) + ')';
+            ctx.lineWidth = 1;
+            ctx.beginPath();
+            ctx.moveTo(dots[a].x, dots[a].y);
+            ctx.lineTo(dots[b].x, dots[b].y);
+            ctx.stroke();
+          }
+        }
+      }
+      // dots
+      for (var k = 0; k < dots.length; k++) {
+        ctx.beginPath();
+        ctx.fillStyle = 'rgba(' + ACCENT + ',0.55)';
+        ctx.arc(dots[k].x, dots[k].y, dots[k].r, 0, Math.PI * 2);
+        ctx.fill();
+      }
+      requestAnimationFrame(step);
+    }
+    window.addEventListener('resize', resize);
+    // wait one frame so the layout (and hero height) is settled
+    requestAnimationFrame(function () { resize(); step(); });
+  })();
+  </script>
 </body>
 </html>
