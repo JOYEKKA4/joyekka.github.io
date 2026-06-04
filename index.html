@@ -14,8 +14,8 @@
       overflow: hidden;
       margin-top: 8px;
       background:
-        radial-gradient(130% 130% at 78% 0%, #1f3a3a 0%, #16282b 45%, #11202a 100%);
-      border: 1px solid #24403f;
+        radial-gradient(130% 130% at 78% 0%, #34595a 0%, #2c4748 45%, #243c40 100%);
+      border: 1px solid #3a5859;
       box-shadow: 0 1px 2px rgba(20,32,43,.06), 0 14px 40px -22px rgba(20,32,43,.55);
     }
     #hero-canvas {
@@ -132,6 +132,7 @@
 
   <script>
   (function () {
+    var DOT = '168,232,226';
     var canvas = document.getElementById('hero-canvas');
     if (!canvas) return;
     var ctx = canvas.getContext('2d');
