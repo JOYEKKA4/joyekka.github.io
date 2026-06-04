@@ -163,7 +163,6 @@
         if (d.x < 0 || d.x > W) d.vx *= -1;
         if (d.y < 0 || d.y > H) d.vy *= -1;
       }
-      // lines
       for (var a = 0; a < dots.length; a++) {
         for (var b = a + 1; b < dots.length; b++) {
           var dx = dots[a].x - dots[b].x, dy = dots[a].y - dots[b].y;
@@ -178,7 +177,6 @@
           }
         }
       }
-      // dots
       for (var k = 0; k < dots.length; k++) {
         ctx.beginPath();
         ctx.fillStyle = 'rgba(' + ACCENT + ',0.55)';
@@ -188,7 +186,6 @@
       requestAnimationFrame(step);
     }
     window.addEventListener('resize', resize);
-    // wait one frame so the layout (and hero height) is settled
     requestAnimationFrame(function () { resize(); step(); });
   })();
   </script>
