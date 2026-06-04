@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Publications — Joy Ekka</title>
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+  <header class="site">
+    <nav>
+      <a class="brand" href="index.html">Joy <span>Ekka</span></a>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="research.html">Research</a></li>
+        <li><a class="active" href="publications.html">Publications</a></li>
+        <li><a href="cv.html">CV</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="wrap">
+    <section class="hero">
+      <p class="eyebrow">Publications</p>
+      <h1>Publications</h1>
+      <p class="tagline">Peer-reviewed work. See also my <a href="https://orcid.org/0000-0002-1903-6658">ORCID</a> and <a href="https://scholar.google.com/citations?user=YOUR_SCHOLAR_ID">Google Scholar</a>.</p>
+    </section>
+
+    <section>
+      <div class="pub">
+        <p class="title">Mn-doped MoS₂ for electrocatalysis</p>
+        <p class="authors"><b class="me">J. Ekka</b>, et al. <span class="venue">Physical Chemistry Chemical Physics (PCCP)</span>, 2022.</p>
+        <p><a href="https://doi.org/PASTE_DOI_HERE" target="_blank" rel="noopener">DOI</a></p>
+      </div>
+
+      <!-- Add new papers by copying a block like the one above.
+           PhD papers in preparation:
+             • DUT-4(Al) & DUT-5(Al)/PVDF composites for toluene capture (in prep)
+             • PoreGraphNet: GNN for MOF/polymer composite properties (in prep)
+      -->
+    </section>
+
+    <section>
+      <h2>In preparation</h2>
+      <div class="pub">
+        <p class="title">Toluene capture in DUT-4(Al)/PVDF and DUT-5(Al)/PVDF composites</p>
+        <p class="authors"><b class="me">J. Ekka</b>, S. Devautour-Vinot, G. Rioland, G. Maurin. <span class="venue">In preparation</span>, 2026.</p>
+      </div>
+      <div class="pub">
+        <p class="title">PoreGraphNet: graph neural networks for MOF/polymer composite properties</p>
+        <p class="authors"><b class="me">J. Ekka</b>, et al. <span class="venue">In preparation</span>, 2026.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site">
+    <div class="wrap">
+      <span>© 2026 Joy Ekka</span>
+      <span>
+        <a href="https://github.com/joy-ekka">GitHub</a> ·
+        <a href="https://www.linkedin.com/in/joy-ekka-121bba211">LinkedIn</a> ·
+        <a href="https://orcid.org/0000-0002-1903-6658">ORCID</a>
+      </span>
+    </div>
+  </footer>
+</body>
+</html>
