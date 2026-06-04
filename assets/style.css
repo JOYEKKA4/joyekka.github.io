@@ -1,0 +1,150 @@
+/* ===========================================================
+   Joy Ekka — personal site stylesheet
+   Edit colors/fonts here once; applies to all pages.
+   =========================================================== */
+
+:root {
+  --ink:        #16202b;   /* main text            */
+  --ink-soft:   #4a5765;   /* secondary text       */
+  --paper:      #f7f5f0;   /* page background      */
+  --card:       #ffffff;   /* card background      */
+  --accent:     #1f6f6b;   /* teal — links/accents */
+  --accent-2:   #c8632a;   /* warm copper accent   */
+  --line:       #e3ddd2;   /* hairlines/borders    */
+  --maxw:       960px;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: "Spectral", Georgia, "Times New Roman", serif;
+  color: var(--ink);
+  background:
+    radial-gradient(1200px 600px at 80% -10%, #eef3f1 0%, transparent 60%),
+    var(--paper);
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ---------- layout ---------- */
+.wrap { max-width: var(--maxw); margin: 0 auto; padding: 0 24px; }
+
+/* ---------- nav ---------- */
+header.site {
+  position: sticky; top: 0; z-index: 10;
+  backdrop-filter: blur(8px);
+  background: rgba(247,245,240,0.85);
+  border-bottom: 1px solid var(--line);
+}
+nav {
+  max-width: var(--maxw); margin: 0 auto;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 16px 24px;
+}
+nav .brand {
+  font-family: "Fraunces", Georgia, serif;
+  font-weight: 600; font-size: 1.15rem; letter-spacing: -0.01em;
+  color: var(--ink); text-decoration: none;
+}
+nav .brand span { color: var(--accent); }
+nav ul { list-style: none; display: flex; gap: 22px; }
+nav a {
+  text-decoration: none; color: var(--ink-soft);
+  font-size: 0.93rem; font-family: "Fraunces", Georgia, serif;
+  padding-bottom: 3px; border-bottom: 2px solid transparent;
+  transition: color .15s, border-color .15s;
+}
+nav a:hover { color: var(--ink); }
+nav a.active { color: var(--accent); border-bottom-color: var(--accent); }
+
+/* ---------- headings ---------- */
+h1, h2, h3 { font-family: "Fraunces", Georgia, serif; letter-spacing: -0.015em; line-height: 1.2; }
+h1 { font-size: 2.6rem; font-weight: 600; }
+h2 { font-size: 1.7rem; font-weight: 600; margin-bottom: .6rem; color: var(--ink); }
+h3 { font-size: 1.15rem; font-weight: 600; }
+
+.eyebrow {
+  font-family: "Fraunces", Georgia, serif;
+  text-transform: uppercase; letter-spacing: .14em;
+  font-size: .72rem; color: var(--accent-2); font-weight: 600;
+}
+
+a { color: var(--accent); }
+a:hover { color: var(--accent-2); }
+
+/* ---------- hero ---------- */
+.hero { padding: 64px 0 40px; }
+.hero h1 { margin-bottom: .4rem; }
+.hero .tagline { font-size: 1.25rem; color: var(--ink-soft); max-width: 640px; }
+.hero .meta { margin-top: 14px; color: var(--ink-soft); font-size: .98rem; }
+
+/* ---------- sections ---------- */
+section { padding: 38px 0; border-top: 1px solid var(--line); }
+section:first-of-type { border-top: none; }
+.lead { font-size: 1.08rem; color: var(--ink-soft); max-width: 680px; }
+p + p { margin-top: 1rem; }
+
+/* ---------- links row ---------- */
+.links { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 22px; }
+.links a {
+  display: inline-flex; align-items: center; gap: 7px;
+  padding: 9px 16px; border: 1px solid var(--line); border-radius: 999px;
+  background: var(--card); color: var(--ink);
+  text-decoration: none; font-size: .9rem; font-family: "Fraunces", Georgia, serif;
+  transition: border-color .15s, transform .15s, color .15s;
+}
+.links a:hover { border-color: var(--accent); color: var(--accent); transform: translateY(-1px); }
+
+/* ---------- cards ---------- */
+.card {
+  background: var(--card); border: 1px solid var(--line);
+  border-radius: 14px; padding: 24px 26px; margin-top: 18px;
+  box-shadow: 0 1px 2px rgba(20,32,43,.03), 0 8px 24px -16px rgba(20,32,43,.18);
+}
+.card h3 { margin-bottom: .35rem; }
+.card .sub { color: var(--accent-2); font-size: .85rem; font-family: "Fraunces", Georgia, serif; text-transform: uppercase; letter-spacing: .08em; }
+.card p { color: var(--ink-soft); margin-top: .5rem; }
+
+.tag {
+  display: inline-block; font-size: .76rem; color: var(--ink-soft);
+  border: 1px solid var(--line); border-radius: 6px;
+  padding: 2px 9px; margin: 6px 6px 0 0; background: var(--paper);
+  font-family: "Fraunces", Georgia, serif;
+}
+
+/* ---------- publications ---------- */
+.pub { padding: 18px 0; border-bottom: 1px solid var(--line); }
+.pub:last-child { border-bottom: none; }
+.pub .title { font-weight: 600; }
+.pub .authors { color: var(--ink-soft); font-size: .95rem; }
+.pub .venue { color: var(--accent-2); font-style: italic; font-size: .95rem; }
+.pub b.me { color: var(--ink); }
+
+/* ---------- cv ---------- */
+.cv-row { display: grid; grid-template-columns: 130px 1fr; gap: 18px; padding: 14px 0; border-bottom: 1px solid var(--line); }
+.cv-row:last-child { border-bottom: none; }
+.cv-row .when { color: var(--accent-2); font-family: "Fraunces", Georgia, serif; font-size: .9rem; }
+.cv-row .what h3 { font-size: 1.05rem; }
+.cv-row .what .where { color: var(--ink-soft); font-size: .92rem; }
+.cv-row .what p { color: var(--ink-soft); margin-top: .3rem; font-size: .96rem; }
+
+/* ---------- footer ---------- */
+footer.site {
+  border-top: 1px solid var(--line); margin-top: 30px;
+  padding: 28px 0; color: var(--ink-soft); font-size: .88rem;
+}
+footer.site .wrap { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 10px; }
+footer.site a { text-decoration: none; }
+
+/* ---------- responsive ---------- */
+@media (max-width: 620px) {
+  h1 { font-size: 2rem; }
+  nav { flex-direction: column; gap: 10px; align-items: flex-start; }
+  nav ul { gap: 16px; flex-wrap: wrap; }
+  .cv-row { grid-template-columns: 1fr; gap: 4px; }
+}
+
+/* google fonts */
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Spectral:wght@400;500&display=swap');
