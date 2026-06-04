@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Research — Joy Ekka</title>
+  <meta name="description" content="Research of Joy Ekka: multi-scale modelling of MOF/polymer composites, VOC capture, and ML for porous materials.">
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+  <header class="site">
+    <nav>
+      <a class="brand" href="index.html">Joy <span>Ekka</span></a>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a class="active" href="research.html">Research</a></li>
+        <li><a href="publications.html">Publications</a></li>
+        <li><a href="cv.html">CV</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="wrap">
+    <section class="hero">
+      <p class="eyebrow">Research</p>
+      <h1>Modelling matter in pores</h1>
+      <p class="tagline">Multi-scale computational design of porous materials for capturing volatile organic compounds.</p>
+    </section>
+
+    <section>
+      <h2>Polymer-infiltrated MOF composites for VOC capture</h2>
+      <p class="lead">My core PhD work models composites of metal–organic frameworks (MOFs) with hydrophobic polymers — principally DUT-4(Al)/PVDF and DUT-5(Al)/PVDF systems — with toluene as the target VOC.</p>
+      <p>Rather than treating the polymer as a surface coating, I study chains that physically infiltrate the MOF channels and restructure the pore network. The two systems behave very differently: DUT-4/PVDF shows a bimodal pore-size distribution with a red-shifted primary peak, consistent with deep polymer infiltration and confinement-driven chain extension, while DUT-5/PVDF shows an attenuated but unshifted main peak with additional features from bulk polymer free volume, constricted entrance apertures, and interfacial voids. Toluene residence time at the MOF entrance is roughly four times longer in DUT-5/PVDF, with an order-of-magnitude difference in self-diffusivity in the MOF region.</p>
+      <div>
+        <span class="tag">DFT</span><span class="tag">GCMC</span><span class="tag">Molecular dynamics</span>
+        <span class="tag">LAMMPS</span><span class="tag">RASPA</span><span class="tag">MDTraj</span>
+      </div>
+    </section>
+
+    <section>
+      <h2>Selected directions</h2>
+
+      <div class="card">
+        <div class="sub">Multi-scale pipeline</div>
+        <h3>From electrons to pore networks</h3>
+        <p>An end-to-end workflow spanning DFT, GCMC, all-atom MD, and graph-theoretic pore-network analysis — including accessible free-volume profiling and void-grid community detection to quantify how infiltration reshapes the pore topology.</p>
+      </div>
+
+      <div class="card">
+        <div class="sub">Machine learning for materials</div>
+        <h3>PoreGraphNet</h3>
+        <p>A graph-neural-network framework (with Bayesian active learning) for predicting MOF/polymer composite properties, built to represent infiltration-modified pore networks — a regime existing models do not capture. Design space spans multiple MOFs, polymers, and target VOCs.</p>
+      </div>
+
+      <div class="card">
+        <div class="sub">Foundations</div>
+        <h3>First-principles materials modelling</h3>
+        <p>Earlier DFT work on 2D transition-metal dichalcogenides, perovskites, and spinels, including Mn-doped MoS₂ for electrocatalysis — the foundation I now build on for porous-materials simulation.</p>
+      </div>
+    </section>
+
+    <section>
+      <h2>Tools</h2>
+      <p class="lead">LAMMPS · RASPA · MDTraj · NetworkX · pymatgen · VMD · PyTorch Geometric · Python · matplotlib</p>
+    </section>
+  </main>
+
+  <footer class="site">
+    <div class="wrap">
+      <span>© 2026 Joy Ekka</span>
+      <span>
+        <a href="https://github.com/joy-ekka">GitHub</a> ·
+        <a href="https://www.linkedin.com/in/joy-ekka-121bba211">LinkedIn</a> ·
+        <a href="https://orcid.org/0000-0002-1903-6658">ORCID</a>
+      </span>
+    </div>
+  </footer>
+</body>
+</html>
