@@ -9,7 +9,7 @@
     /* ---- richer publication cards (scoped to this page) ---- */
     .pub-card {
       display: grid;
-      grid-template-columns: 150px 1fr;
+      grid-template-columns: 170px 1fr;
       gap: 22px;
       align-items: start;
       background: var(--card);
@@ -26,9 +26,9 @@
       box-shadow: 0 2px 4px rgba(20,32,43,.04), 0 16px 36px -18px rgba(20,32,43,.28);
     }
     .pub-thumb {
-      width: 150px; height: 110px; object-fit: cover;
+      width: 170px; height: 110px; object-fit: contain;
       border-radius: 10px; border: 1px solid var(--line);
-      background: var(--paper);
+      background: #000;
     }
     .pub-thumb.placeholder {
       display: flex; align-items: center; justify-content: center;
@@ -55,7 +55,7 @@
     .pub-links a:hover { border-color: var(--accent); color: var(--accent-2); }
     @media (max-width: 600px) {
       .pub-card { grid-template-columns: 1fr; }
-      .pub-thumb, .pub-thumb.placeholder { width: 100%; height: 150px; }
+      .pub-thumb, .pub-thumb.placeholder { width: 100%; height: 160px; }
     }
   </style>
 </head>
