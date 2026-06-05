@@ -16,7 +16,7 @@
       background:
         radial-gradient(130% 130% at 78% 0%, #34595a 0%, #2c4748 45%, #243c40 100%);
       border: 1px solid #3a5859;
-      box-shadow: 0 1px 2px rgba(20,32,43,.06), 0 14px 40px -22px rgba(20,32,43,.55);
+      box-shadow: 0 1px 2px rgba(20,32,43,.06), 0 14px 40px -22px rgba(20,32,43,.4);
     }
     #hero-canvas {
       position: absolute; inset: 0; width: 100%; height: 100%;
@@ -113,9 +113,21 @@
     </section>
     <section>
       <h2>About</h2>
-      <p class="lead"></p>
-      <p>My PhD focuses on multiscale modelling &amp; understanding of composites of metal-organic frameworks (MOFs) and hydrophobic polymers for capture of volatile organic compounds (VOCs).</p>
-      <p>Before my PhD I trained as a physicist (MSc), applying electronic structure theory to 2D transition-metal dichalcogenides, perovskites, and spinels for different applications. </p>
+      <p>My PhD focuses on multiscale modelling &amp; understanding of metal-organic frameworks (MOFs) and hydrophobic polymer composites for selective capture of volatile organic compounds (VOCs) under humidity.</p>
+    </section>
+
+    <section>
+      <h2>Past experiences</h2>
+      <div class="card">
+        <div class="sub">Research stay · Germany</div>
+        <h3>OER activity of an inverse spinel</h3>
+        <p>A comprehensive first-principles study of the oxygen evolution reaction (OER) activity of the inverse spinel.</p>
+      </div>
+      <div class="card">
+        <div class="sub">MSc research</div>
+        <h3>2D layered materials</h3>
+        <p>Electronic structures and properties of 2D layered structure materials and their applications.</p>
+      </div>
     </section>
 
   </main>
@@ -132,13 +144,12 @@
 
   <script>
   (function () {
-    var DOT = '168,232,226';
     var canvas = document.getElementById('hero-canvas');
     if (!canvas) return;
     var ctx = canvas.getContext('2d');
     var stage = document.getElementById('hero-net');
     var W, H, dpr, dots = [];
-    var DOT = '127,214,207';   // light teal dot/line on dark bg
+    var DOT = '168,232,226';   // light teal dot/line on muted bg
     var LINK = 130;            // max distance to draw a line
     var REPEL = 110;           // cursor influence radius
     var mouse = { x: -9999, y: -9999 };
@@ -163,6 +174,7 @@
       }
     }
 
+    // track cursor over the whole panel
     stage.addEventListener('mousemove', function (e) {
       var rect = stage.getBoundingClientRect();
       mouse.x = e.clientX - rect.left;
@@ -177,6 +189,7 @@
       for (var i = 0; i < dots.length; i++) {
         var d = dots[i];
 
+        // repel from cursor
         var mdx = d.x - mouse.x, mdy = d.y - mouse.y;
         var md = Math.sqrt(mdx * mdx + mdy * mdy);
         if (md < REPEL && md > 0.01) {
@@ -185,7 +198,8 @@
           d.vy += (mdy / md) * f;
         }
 
-        d.vx *= 0.96; d.vy *= 0.96;
+        d.vx *= 0.96; d.vy *= 0.96;        // friction so they settle
+        // keep a gentle minimum drift
         if (Math.abs(d.vx) < 0.05) d.vx += (Math.random() - 0.5) * 0.1;
         if (Math.abs(d.vy) < 0.05) d.vy += (Math.random() - 0.5) * 0.1;
 
@@ -195,6 +209,7 @@
         if (d.y < 0) { d.y = 0; d.vy *= -1; }
         if (d.y > H) { d.y = H; d.vy *= -1; }
       }
+      // lines
       for (var a = 0; a < dots.length; a++) {
         for (var b = a + 1; b < dots.length; b++) {
           var dx = dots[a].x - dots[b].x, dy = dots[a].y - dots[b].y;
@@ -209,6 +224,7 @@
           }
         }
       }
+      // dots
       for (var k = 0; k < dots.length; k++) {
         ctx.beginPath();
         ctx.fillStyle = 'rgba(' + DOT + ',0.7)';
