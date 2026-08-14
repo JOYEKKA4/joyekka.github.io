@@ -6,6 +6,30 @@
   <title>CV — Joy Ekka</title>
   <link rel="stylesheet" href="assets/style.css">
   <style>
+    /* ---- technical skills ---- */
+    .skills { margin-top: 6px; }
+    .skill-row {
+      display: grid; grid-template-columns: 210px 1fr; gap: 18px;
+      padding: 16px 0; border-bottom: 1px solid var(--line);
+    }
+    .skill-row:last-child { border-bottom: none; }
+    .skill-row .label {
+      font-family: "Fraunces", Georgia, serif; font-weight: 600;
+      color: var(--ink); font-size: .98rem; padding-top: 3px;
+    }
+    .skill-tags { display: flex; flex-wrap: wrap; gap: 7px; }
+    .skill-tags span {
+      font-size: .82rem; color: var(--ink-soft);
+      border: 1px solid var(--line); border-radius: 7px;
+      padding: 3px 10px; background: var(--paper);
+      font-family: "Fraunces", Georgia, serif;
+    }
+    .skill-note { color: var(--ink-soft); font-size: .95rem; padding-top: 2px; }
+    @media (max-width: 600px) {
+      .skill-row { grid-template-columns: 1fr; gap: 8px; }
+    }
+
+    /* ---- embedded pdf ---- */
     .pdf-frame {
       width: 100%; height: 88vh; min-height: 640px;
       border: 1px solid var(--line); border-radius: 14px;
@@ -38,6 +62,49 @@
     </section>
 
     <section>
+      <h2>Technical skills</h2>
+      <div class="skills">
+        <div class="skill-row">
+          <div class="label">Modelling &amp; analysis</div>
+          <div class="skill-tags">
+            <span>Molecular Dynamics (MD)</span><span>Density Functional Theory (DFT)</span>
+            <span>Monte Carlo (MC)</span><span>Graph theory &amp; algorithms</span>
+            <span>Voxel-based morphometry</span><span>Numerical methods</span>
+            <span>High-performance computing</span>
+          </div>
+        </div>
+        <div class="skill-row">
+          <div class="label">Software</div>
+          <div class="skill-tags">
+            <span>LAMMPS</span><span>GROMACS</span><span>VASP</span><span>CP2K</span>
+            <span>CRYSTAL</span><span>Gaussian</span><span>RASPA</span><span>VMD</span>
+            <span>VESTA</span><span>Materials Studio</span><span>ASE</span>
+          </div>
+        </div>
+        <div class="skill-row">
+          <div class="label">Programming &amp; scientific computing</div>
+          <div class="skill-tags">
+            <span>Python</span><span>C++</span><span>MATLAB</span><span>NumPy/SciPy</span>
+            <span>Git/GitHub</span><span>Linux/HPC environments</span><span>Workflow automation</span>
+          </div>
+        </div>
+        <div class="skill-row">
+          <div class="label">AI / ML</div>
+          <div class="skill-note">
+            PyTorch, TensorFlow, scikit-learn; graph neural networks and Bayesian active learning for materials property prediction; generative materials models.
+          </div>
+        </div>
+        <div class="skill-row">
+          <div class="label">Languages</div>
+          <div class="skill-note">
+            English (fluent), Hindi (native), French (basic, A2).
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Full CV</h2>
       <object class="pdf-frame" data="assets/pdf/Joy_Ekka_CV.pdf" type="application/pdf">
         <iframe class="pdf-frame" src="assets/pdf/Joy_Ekka_CV.pdf" title="Joy Ekka CV"></iframe>
         <p class="pdf-fallback">
@@ -58,5 +125,7 @@
       </span>
     </div>
   </footer>
+</body>
+</html>
 </body>
 </html>
