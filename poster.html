@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Poster video — Joy Ekka</title>
+  <link rel="stylesheet" href="assets/style.css">
+  <style>
+    .video-wrap { max-width: 720px; margin: 0 auto; }
+    .video-wrap video {
+      width: 100%; border-radius: 14px;
+      border: 1px solid var(--line);
+      box-shadow: 0 1px 2px rgba(20,32,43,.03), 0 10px 30px -16px rgba(20,32,43,.35);
+      background: #000;
+    }
+    .video-caption { color: var(--ink-soft); font-size: .95rem; margin-top: 14px; text-align: center; }
+    .video-fallback { font-size: .9rem; color: var(--ink-soft); margin-top: 8px; text-align: center; }
+  </style>
+</head>
+<body>
+  <header class="site">
+    <nav>
+      <a class="brand" href="index.html">Joy <span>Ekka</span></a>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="research.html">Research</a></li>
+        <li><a href="publications.html">Publications</a></li>
+        <li><a href="cv.html">CV</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="wrap">
+    <section class="hero">
+      <p class="eyebrow">Poster session</p>
+      <h1>Poster video</h1>
+      <p class="tagline">MOF/hydrophobic polymer composites for selective VOC capture under humidity.</p>
+    </section>
+
+    <section>
+      <div class="video-wrap">
+        <video controls playsinline preload="metadata" poster="assets/img/poster-thumb.jpg">
+          <source src="assets/POSTER_VIDEO/poster.mp4" type="video/mp4">
+          <p class="video-fallback">
+            Your browser can&rsquo;t play this video &mdash;
+            <a href="assets/POSTER_VIDEO/poster.mp4">download it here</a>.
+          </p>
+        </video>
+        <p class="video-caption">Tap play to watch. Best with sound on.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site">
+    <div class="wrap">
+      <span>&copy; 2026 Joy Ekka</span>
+      <span>
+        <a href="https://github.com/joy-ekka">GitHub</a> &middot;
+        <a href="https://www.linkedin.com/in/joy-ekka-121bba211">LinkedIn</a> &middot;
+        <a href="https://orcid.org/0000-0002-1903-6658">ORCID</a>
+      </span>
+    </div>
+  </footer>
+</body>
+</html>
